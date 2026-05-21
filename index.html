@@ -577,9 +577,11 @@
     }
     .company-ceo-avatar {
       width: 56px; height: 56px; border-radius: 50%;
-      background: linear-gradient(135deg, var(--blue), var(--aqua));
-      display: flex; align-items: center; justify-content: center;
-      font-size: 1.4rem; flex-shrink: 0;
+      overflow: hidden; flex-shrink: 0;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+    }
+    .company-ceo-avatar img {
+      width: 100%; height: 100%; object-fit: cover; object-position: center top;
     }
     .company-ceo-name { font-size: 1rem; font-weight: 700; }
     .company-ceo-title { font-size: .78rem; color: var(--muted); font-family: 'Noto Sans JP', sans-serif; margin-top: .1rem; }
@@ -1216,7 +1218,9 @@
         <div class="company-card-divider"></div>
         <div class="company-card-label">代表取締役</div>
         <div class="company-card-ceo">
-          <div class="company-ceo-avatar">👤</div>
+          <div class="company-ceo-avatar">
+            <img src="IMG_3325.JPG" alt="藤田知久 代表取締役">
+          </div>
           <div>
             <div class="company-ceo-name">藤田 知久</div>
             <div class="company-ceo-title">代表取締役 / CEO<br>株式会社seekout</div>
