@@ -510,8 +510,85 @@
     }
     .ticker-item .sep { color: var(--lime); font-size: 1rem; }
 
+    /* ─── COMPANY ───────────────────────────── */
+    #company { background: var(--white); }
+    .company-grid {
+      display: grid; grid-template-columns: 1fr 1.6fr; gap: 5rem; align-items: start; margin-top: 4rem;
+    }
+    .company-table {
+      width: 100%; border-collapse: collapse;
+    }
+    .company-table tr {
+      border-bottom: 1px solid var(--gray2);
+    }
+    .company-table tr:first-child { border-top: 1px solid var(--gray2); }
+    .company-table th {
+      padding: 1.2rem 1rem 1.2rem 0;
+      font-size: .82rem; font-weight: 700; color: var(--muted);
+      white-space: nowrap; vertical-align: top; width: 120px;
+      font-family: 'Noto Sans JP', sans-serif;
+    }
+    .company-table td {
+      padding: 1.2rem 0;
+      font-size: .9rem; line-height: 1.8; color: var(--text);
+      font-family: 'Noto Sans JP', sans-serif;
+    }
+    .company-card {
+      background: var(--gray); border-radius: 28px; padding: 3rem;
+      position: relative; overflow: hidden;
+    }
+    .company-card-blob {
+      position: absolute; border-radius: 50%; filter: blur(60px); pointer-events: none;
+    }
+    .company-card-blob.cc1 {
+      width: 250px; height: 250px; top: -60px; right: -60px;
+      background: radial-gradient(circle, var(--blue), transparent 70%); opacity: .2;
+    }
+    .company-card-blob.cc2 {
+      width: 200px; height: 200px; bottom: -40px; left: -40px;
+      background: radial-gradient(circle, var(--lime), transparent 70%); opacity: .25;
+    }
+    .company-card-label {
+      font-size: .7rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em;
+      color: var(--muted); margin-bottom: .8rem;
+    }
+    .company-card-name {
+      font-size: 1.8rem; font-weight: 700; line-height: 1.2;
+      margin-bottom: .5rem; letter-spacing: -.01em;
+    }
+    .company-card-name span { color: var(--blue); }
+    .company-card-tagline {
+      font-size: .9rem; color: var(--muted); margin-bottom: 2rem;
+      font-family: 'Noto Sans JP', sans-serif; line-height: 1.7;
+    }
+    .company-card-divider {
+      height: 1px; background: var(--gray2); margin: 1.5rem 0;
+    }
+    .company-card-ceo {
+      display: flex; align-items: center; gap: 1rem;
+    }
+    .company-ceo-avatar {
+      width: 56px; height: 56px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--blue), var(--aqua));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem; flex-shrink: 0;
+    }
+    .company-ceo-name { font-size: 1rem; font-weight: 700; }
+    .company-ceo-title { font-size: .78rem; color: var(--muted); font-family: 'Noto Sans JP', sans-serif; margin-top: .1rem; }
+    .company-badges {
+      display: flex; gap: .6rem; flex-wrap: wrap; margin-top: 2rem;
+    }
+    .company-badge {
+      display: inline-flex; align-items: center; gap: .4rem;
+      background: white; border-radius: 100px; padding: .4rem .9rem;
+      font-size: .75rem; font-weight: 600; color: var(--text);
+      box-shadow: 0 2px 8px rgba(0,0,0,.06);
+    }
+    .company-badge .dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+
     /* ─── RESPONSIVE ─────────────────────────── */
     @media (max-width: 900px) {
+      .company-grid { grid-template-columns: 1fr; gap: 3rem; }
       nav { padding: 1rem 1.5rem; }
       .nav-links { display: none; }
       .nav-hamburger { display: flex; }
@@ -556,9 +633,9 @@
     <li><a href="#strength">Strength</a></li>
     <li><a href="#pricing">Pricing</a></li>
     <li><a href="#faq">FAQ</a></li>
-    <li><a href="#">Company</a></li>
+    <li><a href="#company">Company</a></li>
   </ul>
-  <button class="nav-cta" onclick="document.getElementById('cta').scrollIntoView({behavior:'smooth'})">お問い合わせ</button>
+  <button class="nav-cta" onclick="document.getElementById('company').scrollIntoView({behavior:'smooth'})">お問い合わせ</button>
   <div class="nav-hamburger" onclick="toggleMobileMenu()">
     <span></span><span></span><span></span>
   </div>
@@ -589,7 +666,7 @@
       海外市場の可能性を見つけ、事業を動かす。
     </p>
     <div class="hero-actions">
-      <a href="#cta" class="btn-primary">
+      <a href="#company" class="btn-primary">
         無料で市場可能性を診断する
         <span class="arrow">→</span>
       </a>
@@ -982,7 +1059,7 @@
         <li>デスクトップリサーチ</li>
         <li>レポート納品</li>
       </ul>
-      <button class="price-cta outline" onclick="document.getElementById('cta').scrollIntoView({behavior:'smooth'})">相談する →</button>
+      <button class="price-cta outline" onclick="document.getElementById('company').scrollIntoView({behavior:'smooth'})">相談する →</button>
     </div>
 
     <div class="price-card popular reveal">
@@ -996,7 +1073,7 @@
         <li>試食・プロトタイプテスト</li>
         <li>分析レポート</li>
       </ul>
-      <button class="price-cta light" onclick="document.getElementById('cta').scrollIntoView({behavior:'smooth'})">相談する →</button>
+      <button class="price-cta light" onclick="document.getElementById('company').scrollIntoView({behavior:'smooth'})">相談する →</button>
     </div>
 
     <div class="price-card reveal">
@@ -1009,7 +1086,7 @@
         <li>パートナー開拓支援</li>
         <li>現地実行サポート</li>
       </ul>
-      <button class="price-cta dark" onclick="document.getElementById('cta').scrollIntoView({behavior:'smooth'})">相談する →</button>
+      <button class="price-cta dark" onclick="document.getElementById('company').scrollIntoView({behavior:'smooth'})">相談する →</button>
     </div>
   </div>
   <p style="text-align:center;color:var(--muted);font-size:.85rem;margin-top:2rem;font-family:'Noto Sans JP',sans-serif;">
@@ -1075,28 +1152,86 @@
   </div>
 </section>
 
-<!-- ─── CTA ───────────────────────────────── -->
-<div id="cta">
-  <div class="cta-bg-blob cb1"></div>
-  <div class="cta-bg-blob cb2"></div>
-  <div style="position:relative;z-index:1;">
-    <div class="cta-eyebrow reveal">
-      <span>✦</span> 無料診断 — 5分で完了
-    </div>
-    <h2 class="cta-title reveal">海外展開の可能性を、<br>5分で診断してみませんか？</h2>
-    <p class="cta-sub reveal">簡単な質問に答えるだけで、あなたの事業に最適な市場と戦略の方向性を無料でご提案します。</p>
-    <div class="cta-actions reveal">
-      <a href="#" class="btn-lime">無料で診断をはじめる →</a>
-      <a href="#" class="btn-outline" style="background:white;">資料請求・お問い合わせ</a>
-    </div>
-    <p class="cta-note reveal">クレジットカード不要 · 無料 · 5分で完了</p>
+<!-- ─── COMPANY ───────────────────────────── -->
+<section id="company">
+  <div class="reveal">
+    <div class="section-eyebrow">Company</div>
+    <h2 class="section-title">会社概要</h2>
   </div>
+  <div class="company-grid">
+    <!-- Table -->
+    <div class="reveal">
+      <table class="company-table">
+        <tr>
+          <th>会社名</th>
+          <td>株式会社seekout</td>
+        </tr>
+        <tr>
+          <th>所在地</th>
+          <td>〒631-0824<br>奈良県奈良市学園大和町3丁目154番地</td>
+        </tr>
+        <tr>
+          <th>代表取締役</th>
+          <td>藤田 知久</td>
+        </tr>
+        <tr>
+          <th>資本金</th>
+          <td>5,000,000円</td>
+        </tr>
+        <tr>
+          <th>設立</th>
+          <td>2024年</td>
+        </tr>
+        <tr>
+          <th>事業内容</th>
+          <td>
+            グローバルマーケットリサーチ事業<br>
+            テストマーケティング支援事業<br>
+            海外市場参入コンサルティング事業<br>
+            海外事業開発・現地実行支援事業
+          </td>
+        </tr>
+        <tr>
+          <th>対応地域</th>
+          <td>東南アジア・南アジア・中東・欧米ほか15カ国以上</td>
+        </tr>
+        <tr>
+          <th>URL</th>
+          <td><a href="https://seekout.co.jp" style="color:var(--blue);text-decoration:none;">seekout.co.jp</a></td>
+        </tr>
+      </table>
+    </div>
 
-  <!-- Decorative -->
-  <div class="deco-star" style="top:15%;right:10%;color:var(--blue);font-size:1.5rem;animation-delay:-.5s;">✦</div>
-  <div class="deco-star" style="bottom:20%;left:8%;color:var(--coral);font-size:1rem;animation-delay:-2s;">✦</div>
-  <div style="position:absolute;bottom:2rem;right:3rem;width:80px;height:80px;border-radius:50%;background:var(--blue);display:flex;align-items:center;justify-content:center;color:white;font-size:.65rem;font-weight:700;text-align:center;line-height:1.4;">Let's<br>Explore!</div>
-</div>
+    <!-- Card -->
+    <div class="company-card reveal">
+      <div class="company-card-blob cc1"></div>
+      <div class="company-card-blob cc2"></div>
+      <div style="position:relative;z-index:1;">
+        <div class="company-card-label">About SeekOut</div>
+        <div class="company-card-name">Seek<span>Out</span></div>
+        <div class="company-card-tagline">
+          「世界のリアルを、あなたの事業成長に。」<br>
+          グローバルリサーチと現地実行力を掛け合わせ、<br>海外市場への挑戦を確かな成果へ導きます。
+        </div>
+        <div class="company-card-divider"></div>
+        <div class="company-card-label">代表取締役</div>
+        <div class="company-card-ceo">
+          <div class="company-ceo-avatar">👤</div>
+          <div>
+            <div class="company-ceo-name">藤田 知久</div>
+            <div class="company-ceo-title">代表取締役 / CEO<br>株式会社seekout</div>
+          </div>
+        </div>
+        <div class="company-badges">
+          <div class="company-badge"><span class="dot" style="background:var(--lime);"></span>15+ Countries</div>
+          <div class="company-badge"><span class="dot" style="background:var(--blue);"></span>3,000+ Interviews</div>
+          <div class="company-badge"><span class="dot" style="background:var(--coral);"></span>100+ Projects</div>
+          <div class="company-badge"><span class="dot" style="background:var(--aqua);"></span>80%+ Repeat</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- ─── FOOTER ────────────────────────────── -->
 <footer>
@@ -1110,10 +1245,10 @@
     <a href="#strength">Strength</a>
     <a href="#pricing">Pricing</a>
     <a href="#faq">FAQ</a>
-    <a href="#">Company</a>
+    <a href="#company">Company</a>
     <a href="#">Privacy Policy</a>
   </nav>
-  <div class="footer-copy">© 2024 SeekOut Inc. All rights reserved.</div>
+  <div class="footer-copy">© 2025 株式会社seekout All rights reserved.</div>
 </footer>
 
 <script>
